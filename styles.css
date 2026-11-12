@@ -1,10 +1,13 @@
 :root {
-  --navy: #15213f;
-  --gold: #b08d57;
-  --ink: #1b2540;
-  --muted: #5b6475;
-  --soft: #f4f6fa;
-  --line: #e4e7ee;
+  --navy: #1f3d33;        /* deep forest green, used wherever navy was */
+  --navy-deep: #152b24;
+  --gold: #b8955a;
+  --gold-light: #d8bf8e;
+  --ink: #1c2a26;
+  --muted: #5d6b66;
+  --soft: #f1ede4;        /* warm sand for the tinted sections */
+  --ivory: #faf7f1;       /* page background */
+  --line: #e2dccf;
   --serif: "Lora", Georgia, serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -250,4 +253,85 @@ a.card:hover { box-shadow: 0 8px 24px rgba(21, 33, 63, .08); transform: translat
 
 @media (max-width: 720px) {
   .wa-float { right: 16px; bottom: 16px; width: 52px; height: 52px; }
+}
+/* ================= Theme: Forest & Brass ================= */
+body { background: var(--ivory); }
+.site-header, .card, .form input, .form select, .form textarea, .btn-ghost { background: #fffdf9; }
+
+/* Hero: dark, full-bleed */
+.hero {
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(184,149,90,.18), transparent 60%),
+    linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: #cfd8d3;
+}
+.hero h1 { color: #fff; }
+.hero .lead { color: #cfd8d3; }
+.hero .eyebrow { color: var(--gold-light); }
+.hero .btn-primary { background: var(--gold); border-color: var(--gold); color: var(--navy-deep); }
+.hero .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+.hero .btn-ghost { background: transparent; border-color: rgba(255,255,255,.45); color: #fff; }
+.hero .btn-ghost:hover { background: rgba(255,255,255,.08); }
+
+/* Portrait: offset gold frame */
+.portrait { background: #2a4a3f; border-radius: 4px; }
+.portrait::before {
+  content: ""; position: absolute; inset: 0;
+  transform: translate(14px, 14px);
+  border: 1.5px solid var(--gold); border-radius: 4px;
+  pointer-events: none;
+}
+.portrait img { border-radius: 4px; }
+.portrait-placeholder { color: #b9c6c0; }
+.badge { background: var(--gold); color: var(--navy-deep); left: -18px; bottom: -18px; }
+
+/* Forums strip: sits on the hero's shoulder */
+.strip { background: var(--navy-deep); color: #cfd8d3; border-top: 1px solid rgba(255,255,255,.08); }
+.strip-grid [data-icon] { color: var(--gold-light); }
+
+/* Section headings get a short gold rule */
+.eyebrow::before {
+  content: ""; display: inline-block; vertical-align: middle;
+  width: 22px; height: 1px; background: var(--gold); margin-right: 10px;
+}
+.hero .eyebrow::before { background: var(--gold-light); }
+
+/* Cards */
+.card { border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 4px; }
+a.card:hover { box-shadow: 0 10px 28px rgba(31,61,51,.12); border-top-color: var(--navy); }
+.card-icon { color: var(--navy); }
+
+/* Steps */
+.num { color: var(--gold); }
+.steps > div { border-top: 1px solid var(--line); padding-top: 14px; }
+
+/* Pull quote and FAQ */
+.pull { color: var(--navy); }
+.faq details { border-bottom-color: var(--line); }
+
+/* Buttons elsewhere */
+.btn-primary { background: var(--navy); border-color: var(--navy); }
+.btn-primary:hover { background: var(--navy-deep); border-color: var(--navy-deep); }
+.btn-ghost { color: var(--navy); border-color: var(--navy); }
+
+/* Notice bar, CTA band, footer */
+.notice { background: var(--navy-deep); }
+.notice button { background: var(--gold); color: var(--navy-deep); }
+.cta-band { background: var(--navy); }
+.site-footer { background: var(--navy-deep); color: #a9b7b1; border-top: 2px solid var(--gold); }
+.copy { color: #7d8c86; }
+
+/* Inner page headers get the same dark treatment as the hero */
+.page-head { background: var(--navy); color: #cfd8d3; }
+.page-head h1 { color: #fff; }
+.page-head .lead { color: #cfd8d3; }
+.page-head .eyebrow { color: var(--gold-light); }
+.page-head .eyebrow::before { background: var(--gold-light); }
+.page-head .btn-primary { background: var(--gold); border-color: var(--gold); color: var(--navy-deep); }
+.page-head .btn-ghost { background: transparent; border-color: rgba(255,255,255,.45); color: #fff; }
+.page-head .btn-ghost:hover { background: rgba(255,255,255,.08); }
+
+@media (max-width: 900px) {
+  .portrait::before { transform: translate(10px, 10px); }
+  .badge { left: 12px; bottom: -16px; }
 }
