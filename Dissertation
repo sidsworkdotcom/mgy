@@ -152,7 +152,7 @@
       <h2>Writing and commentary</h2>
       <ul class="pub-list">
         <li>
-          <div class="pub-thumb empty"><span data-icon="book"></span></div>
+          <a class="pub-thumb" href="7.jpg" data-lightbox><img src="7.jpg" alt="Illustration: balance scale weighing legal papers against an AI network" loading="lazy"></a>
           <div>
             <span class="pub-meta">Dissertation</span>
             <h3>Artificial Intelligence: Best Supporting Actor for Online Dispute Resolution</h3>
@@ -160,7 +160,7 @@
           </div>
         </li>
         <li>
-          <div class="pub-thumb empty"><span data-icon="file"></span></div>
+          <a class="pub-thumb" href="8.jpg" data-lightbox><img src="8.jpg" alt="Illustration: stack of law journals on a desk" loading="lazy"></a>
           <div>
             <span class="pub-meta">Maharashtra Law Journal</span>
             <h3>Published author</h3>
