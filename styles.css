@@ -1,12 +1,12 @@
 :root {
-  --navy: #1f3d33;        /* deep forest green, used wherever navy was */
+  --navy: #1f3d33;       /* deep forest green, used wherever navy was */
   --navy-deep: #152b24;
   --gold: #b8955a;
   --gold-light: #d8bf8e;
   --ink: #1c2a26;
   --muted: #5d6b66;
-  --soft: #f1ede4;        /* warm sand for the tinted sections */
-  --ivory: #faf7f1;       /* page background */
+  --soft: #f1ede4;       /* warm sand for the tinted sections */
+  --ivory: #faf7f1;      /* page background */
   --line: #e2dccf;
   --serif: "Lora", Georgia, serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -35,7 +35,6 @@ h3 { font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.35; }
 .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
 .section { padding: 68px 0; }
 .soft { background: var(--soft); }
-
 .eyebrow {
   font-size: .72rem;
   letter-spacing: .18em;
@@ -44,7 +43,6 @@ h3 { font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.35; }
   margin-bottom: 8px;
 }
 .lead { margin-top: 16px; max-width: 34rem; }
-
 [data-icon] { display: inline-flex; line-height: 0; }
 
 /* Buttons */
@@ -173,7 +171,6 @@ a.card:hover { box-shadow: 0 8px 24px rgba(21, 33, 63, .08); transform: translat
 .contact-list a:hover { color: var(--navy); text-decoration: underline; }
 .map { background: #eceff5; border-radius: 8px; overflow: hidden; height: 220px; }
 .map iframe { width: 100%; height: 100%; border: 0; display: block; }
-
 .form { display: flex; flex-direction: column; gap: 14px; }
 .form input, .form select, .form textarea {
   width: 100%;
@@ -228,18 +225,19 @@ a.card:hover { box-shadow: 0 8px 24px rgba(21, 33, 63, .08); transform: translat
   .cards { grid-template-columns: 1fr; }
   .brand { font-size: 1.15rem; }
 }
+
 @media (min-width: 900px) {
-  html { font-size: 16.5px; }                          /* was 17px */
-  .container { max-width: 1240px; padding: 0 40px; }   /* was 1320px */
-  .section { padding: 80px 0; }                        /* was 92px */
-  h1 { font-size: clamp(2.3rem, 4.4vw, 3.3rem); }      /* was up to 3.6rem */
-  .hero { padding: 72px 0 88px; }                      /* was 84px 0 100px */
+  html { font-size: 16.5px; }               /* was 17px */
+  .container { max-width: 1240px; padding: 0 40px; }  /* was 1320px */
+  .section { padding: 80px 0; }              /* was 92px */
+  h1 { font-size: clamp(2.3rem, 4.4vw, 3.3rem); }   /* was up to 3.6rem */
+  .hero { padding: 72px 0 88px; }            /* was 84px 0 100px */
   /* leave the rest of the block as it is */
 }
-
 @media (min-width: 1440px) {
-  html { font-size: 17px; }                            /* was 18px */
+  html { font-size: 17px; }                  /* was 18px */
 }
+
 /* ---------- Floating WhatsApp button ---------- */
 .wa-float {
   position: fixed; right: 22px; bottom: 22px; z-index: 30;
@@ -250,10 +248,10 @@ a.card:hover { box-shadow: 0 8px 24px rgba(21, 33, 63, .08); transform: translat
   transition: transform .2s, box-shadow .2s;
 }
 .wa-float:hover { transform: scale(1.07); box-shadow: 0 8px 22px rgba(0, 0, 0, .28); }
-
 @media (max-width: 720px) {
   .wa-float { right: 16px; bottom: 16px; width: 52px; height: 52px; }
 }
+
 /* ================= Theme: Forest & Brass ================= */
 body { background: var(--ivory); }
 .site-header, .card, .form input, .form select, .form textarea, .btn-ghost { background: #fffdf9; }
@@ -334,4 +332,49 @@ a.card:hover { box-shadow: 0 10px 28px rgba(31,61,51,.12); border-top-color: var
 @media (max-width: 900px) {
   .portrait::before { transform: translate(10px, 10px); }
   .badge { left: 12px; bottom: -16px; }
+}
+
+/* ================= Profile sections (home) ================= */
+#publications, #matters, #press { scroll-margin-top: 80px; }
+
+.creds { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 24px; margin-top: 24px; font-size: .88rem; }
+.creds div { border-top: 1px solid var(--line); padding-top: 12px; }
+.creds strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.05rem; color: var(--ink); }
+
+.pub-list { list-style: none; padding: 0; margin: 26px 0 0; }
+.pub-list li { display: grid; grid-template-columns: 200px 1fr; gap: 28px; padding: 22px 0; border-bottom: 1px solid var(--line); font-size: .92rem; }
+.pub-list li:first-child { border-top: 1px solid var(--line); }
+.pub-meta { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); padding-top: 4px; }
+.pub-list h3 { font-family: var(--serif); font-weight: 400; font-size: 1.12rem; margin-bottom: 4px; }
+.pub-link { display: inline-block; margin-top: 8px; font-weight: 500; color: var(--navy); }
+.pub-link:hover { color: var(--gold); }
+
+.cards-2 { grid-template-columns: repeat(2, 1fr); }
+.case-card h3 { font-family: var(--serif); font-weight: 400; font-size: 1.05rem; }
+.case-no { display: block; font-size: .78rem; letter-spacing: .03em; color: var(--gold); margin: 4px 0 10px; }
+.fine { margin-top: 18px; font-size: .8rem; }
+
+/* Press: dark band so it stands apart from the soft sections around it */
+.press-band { background: var(--navy); color: #cfd8d3; }
+.press-band h2 { color: #fff; }
+.press-band .eyebrow { color: var(--gold-light); }
+.press-band .eyebrow::before { background: var(--gold-light); }
+.press-grid { columns: 3 260px; column-gap: 16px; margin-top: 28px; }
+.press-item { display: block; break-inside: avoid; margin: 0 0 16px; background: #fffdf9; border-radius: 4px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.press-item:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,.25); }
+.press-item figure { margin: 0; }
+.press-item .thumb { background: #ece6d9; }
+.press-item .thumb.empty { aspect-ratio: 4 / 3; }
+.press-item img { width: 100%; height: auto; }
+.press-item figcaption { padding: 12px 14px 14px; font-size: .84rem; line-height: 1.5; color: var(--muted); }
+.press-item .src { display: block; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+
+.lightbox { border: 0; padding: 0; background: transparent; max-width: min(94vw, 1000px); max-height: 94vh; overflow: visible; }
+.lightbox::backdrop { background: rgba(21,43,36,.9); }
+.lightbox img { max-height: 88vh; width: auto; margin: 0 auto; border-radius: 4px; }
+.lightbox button { position: absolute; top: -44px; right: 0; background: none; border: 0; color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; }
+
+@media (max-width: 720px) {
+  .pub-list li { grid-template-columns: 1fr; gap: 6px; }
+  .cards-2, .creds { grid-template-columns: 1fr; }
 }
